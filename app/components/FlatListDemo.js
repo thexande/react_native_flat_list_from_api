@@ -49,10 +49,10 @@ render() {
         renderItem={({ item }) => (
           <ListItem
             roundAvatar
+            keyExtractor = {item => item.email}
             title = {`${item.name.first} ${item.name.last}`}
             subtitle = {item.email}
             avatar = {{ uri: item.picture.thumbnail }}
-            keyExtractor = {item => item.email}
           />
         )}
       />
