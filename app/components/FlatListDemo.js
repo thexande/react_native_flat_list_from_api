@@ -43,7 +43,7 @@ class FlatListDemo extends Component {
 
 render() {
   return (
-    <List automaticallyAdjustContentInsets={false} >
+    <List automaticallyAdjustContentInsets={false} containerStyle = {{marginTop: 0}} >
       <FlatList
         automaticallyAdjustContentInsets={false}
         data={this.state.data}
