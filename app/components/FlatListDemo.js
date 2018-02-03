@@ -46,10 +46,11 @@ render() {
     <List>
       <FlatList
         data={this.state.data}
+        keyExtractor = {(item, index) => index}
         renderItem={({ item }) => (
           <ListItem
             roundAvatar
-            keyExtractor = {item => item.email}
+            keyExtractor = {(item, index) => index}
             title = {`${item.name.first} ${item.name.last}`}
             subtitle = {item.email}
             avatar = {{ uri: item.picture.thumbnail }}

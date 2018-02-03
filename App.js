@@ -35,7 +35,7 @@ export default class App extends React.Component {
       //   </Text>
       // </View>
 
-      <FlatListDemo/>
+      <FlatListDemo style = {{height: 100, width: 100}} />
 
     )
   }
