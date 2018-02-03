@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -11,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import FlatListDemo from './app/components/FlatListDemo';
+import FlatListDemo from './FlatListDemo';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -35,7 +29,7 @@ export default class App extends React.Component {
       //   </Text>
       // </View>
 
-      <FlatListDemo style = {styles.container} />
+      <FlatListDemo navigator = { this.props.navigator }/>
 
     )
   }
@@ -58,4 +52,4 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
