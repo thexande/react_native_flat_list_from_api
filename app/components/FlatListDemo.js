@@ -43,23 +43,42 @@ class FlatListDemo extends Component {
 
 render() {
   return (
-    <List>
+    <List automaticallyAdjustContentInsets={false} >
       <FlatList
+        automaticallyAdjustContentInsets={false}
         data={this.state.data}
         keyExtractor = {(item, index) => index}
-        renderItem={({ item }) => (
-          <ListItem
-            roundAvatar
-            keyExtractor = {(item, index) => index}
-            title = {`${item.name.first} ${item.name.last}`}
-            subtitle = {item.email}
-            avatar = {{ uri: item.picture.thumbnail }}
-          />
-        )}
+        ItemSeperatorComponent = {this.renderSeparator}
+
+        renderItem = { this.renderItem }
       />
     </List>
   )
   }
+
+  renderItem = ({ item }) => (
+    <ListItem
+      roundAvatar
+      keyExtractor = {(item, index) => index}
+      title = {`${item.name.first} ${item.name.last}`}
+      subtitle = {item.email}
+      avatar = {{ uri: item.picture.thumbnail }}
+      containerStyle = {{ borderTopWidth: 0 }}
+    />
+  )
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: "86%",
+          backgroundColor: "#CED0CE",
+          marginLeft: "14%"
+        }}
+      />
+    );
+  };
 }
 
 export default FlatListDemo;
