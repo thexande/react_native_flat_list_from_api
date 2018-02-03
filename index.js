@@ -1,4 +1,11 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
+import { Navigation } from 'react-native-navigation'
 
-AppRegistry.registerComponent('api_test', () => App);
+Navigation.registerComponent('realmtest', () => App);
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'realmtest',
+    title: 'Welcome'
+  }
+});
