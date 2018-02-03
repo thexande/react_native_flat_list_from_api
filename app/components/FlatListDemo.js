@@ -56,7 +56,7 @@ render() {
   )
   }
 
-  renderItem = ({ item }) => (
+  renderItem = ({ item, sectionId }) => (
     <ListItem
       roundAvatar
       keyExtractor = {(item, index) => index}
@@ -64,6 +64,9 @@ render() {
       subtitle = {item.email}
       avatar = {{ uri: item.picture.thumbnail }}
       containerStyle = {{ borderTopWidth: 0 }}
+      onPress = {() => {
+        alert("selected" + sectionId)
+      }}
     />
   )
 
