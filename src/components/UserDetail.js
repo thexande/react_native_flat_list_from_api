@@ -9,7 +9,7 @@ export default class UserDetail extends Component {
 
     render() {
         return (
-            <View styles={{backgroundColor: green}}/>
+            <View style = {{backgroundColor: "red"}}/>
         )
     }
 }

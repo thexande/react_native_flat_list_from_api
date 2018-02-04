@@ -1,14 +1,13 @@
 import { Navigation } from 'react-native-navigation'
 import { registerScreens } from './registerScreens'
-import { UserList } from './components/UserList'
+import { UserDetail } from './components/UserDetail'
 
-// registerScreens()
+registerScreens()
 
-Navigation.registerComponent('userList', () => UserList)
 
 Navigation.startSingleScreenApp({
   screen: {
-    screen: 'userList',
+    screen: "api_test.userList",
     title: 'Welcome'
   }
 })
