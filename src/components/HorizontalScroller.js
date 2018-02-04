@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { FlatList, List, View, Text, StyleSheet, Image } from "react-native"
 import ElevatedView from 'fiber-react-native-elevated-view'
+import FastImage from 'react-native-fast-image'
 
 export default class HorizontalScroller extends Component {
     constructor(props) {
@@ -57,9 +58,15 @@ const styles = StyleSheet.create({
         fontSize: 24
     },
     infoStack: {
-        marginTop: 82,
+        marginTop: 24,
         marginLeft: 12,
         flexDirection: "column"
+    },
+    icon: {
+        marginTop: 12,
+        marginLeft: 12,
+        height: 40,
+        width: 40
     }
 })
 
@@ -72,7 +79,7 @@ class TitleCard extends Component {
         return (
             <View style={styles.card}>
                 <ElevatedView style={styles.elevated} elevation={6}>
-
+                    <FastImage resizeMode="contain" style={styles.icon} source={{uri:"https://bitcoin.org/img/icons/opengraph.png"}}/>
                     <View style={styles.infoStack}>
                         <Text style={styles.symbol}>BTC</Text>
                         <Text>Bitcoin</Text>
