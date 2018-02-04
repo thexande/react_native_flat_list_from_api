@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { FlatList, List, View, Text, StyleSheet, Image } from "react-native"
+import { FlatList, List, View, Text, StyleSheet, Image, TouchableHighlight } from "react-native"
 import ElevatedView from 'fiber-react-native-elevated-view'
 import FastImage from 'react-native-fast-image'
 
@@ -19,8 +19,6 @@ export default class HorizontalScroller extends Component {
                 automaticallyAdjustContentInsets={false}
                 data={this.state.items}
                 keyExtractor = {(item, index) => index}
-            //   ItemSeperatorComponent = {this.renderSeparator}
-
                 renderItem = { this.renderItem }
                 horizontal={true}
             />
@@ -30,9 +28,7 @@ export default class HorizontalScroller extends Component {
     
     renderItem = ({ item }) => {
         return (
-            <View style={{ flex: 1, backgroundColor: "white", width: 160}}>
                 <TitleCard/>
-            </View>
         )
     }
 }
@@ -41,6 +37,7 @@ export default class HorizontalScroller extends Component {
 const styles = StyleSheet.create({
     card: {
         flex: 1,
+        width: 140
     },
     elevated: {
         flex: 1,
@@ -71,18 +68,20 @@ const styles = StyleSheet.create({
     },
     cardContainer: {
         overflow: "hidden",
-        // marginRight: 12
-        flex: 1,
-        margin: 0
     },
     largeIcon: {
         position: "absolute",
-        marginTop: 30,
+        marginTop: 20,
         marginLeft: 70,
         height: 100,
         width: 100,
         transform: [{ rotate: '320deg'}],
         opacity: 0.7
+    },
+    viewButton: {
+        position: "absolute",
+        bottom: 12,
+        right: 12,
     }
 })
 
@@ -94,7 +93,7 @@ class TitleCard extends Component {
     render() {
         return (
             <View style={styles.card}>
-                <ElevatedView style={styles.elevated} elevation={6}>
+                <ElevatedView style={styles.elevated} elevation={5}>
                     <View style={styles.cardContainer}>
                         <FastImage Transforms resizeMode="contain" style={styles.largeIcon} source={{uri:"https://bitcoin.org/img/icons/opengraph.png"}}/>
                         <FastImage resizeMode="contain" style={styles.icon} source={{uri:"https://bitcoin.org/img/icons/opengraph.png"}}/>          
@@ -102,9 +101,54 @@ class TitleCard extends Component {
                             <Text style={styles.symbol}>BTC</Text>
                             <Text>Bitcoin</Text>
                             <Text>$6,000</Text>
-                        </View>   
+                        </View>                           
                     </View>
+                    <View style={styles.viewButton}><ViewButton title={"VIEW"}/></View>
                 </ElevatedView>
+            </View>
+        )
+    }
+}
+
+
+const viewButtonStyle = StyleSheet.create({
+    text: {
+        color: "white",
+        textAlign: "center",
+        color: "#006FFF",
+        fontWeight: "900",
+        fontSize: 12,
+    },
+    button: {
+        backgroundColor: "#D4D4D4",
+        width: 42,
+        height: 24,  
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    container: {
+        borderRadius: 12,
+        overflow: "hidden"
+
+        // padding: 6,
+        // alignItems: "center"
+    }
+})
+
+class ViewButton extends Component { 
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <View style={viewButtonStyle.container}>
+                <TouchableHighlight  onPress={() => {alert('onPress')}} style={viewButtonStyle.button}>
+                    <View style={viewButtonStyle.container}>
+                        <Text style={viewButtonStyle.text}>{this.props.title}</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
         )
     }
