@@ -17,19 +17,19 @@ const instructions = Platform.select({
 export default class UserList extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      // <View style={styles.container}>
+      //   <Text style={styles.welcome}>
+      //     Welcome to React Native!
+      //   </Text>
+      //   <Text style={styles.instructions}>
+      //     To get started, edit App.js
+      //   </Text>
+      //   <Text style={styles.instructions}>
+      //     {instructions}
+      //   </Text>
+      // </View>
 
-      // <FlatListDemo navigator = { this.props.navigator }/>
+      <FlatListDemo style = {{height: 100, width: 100}} navigator = { this.props.navigator } />
 
     )
   }

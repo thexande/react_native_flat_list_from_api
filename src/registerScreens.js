@@ -5,6 +5,6 @@ import HelloWorld from './components/HelloWorld';
 import FlatListDemo from './components/FlatListDemo';
 
 export function registerScreens() {
-    Navigation.registerComponent('api_test.userList', () => FlatListDemo)
-    Navigation.registerComponent('userDetail', () => UserDetail)
+    Navigation.registerComponent('api_test.userList', () => UserList)
+    Navigation.registerComponent('api_test.userDetail', () => UserDetail)
 }
