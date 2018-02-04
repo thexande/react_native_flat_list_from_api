@@ -2,6 +2,7 @@ package com.api_test;
 
 
 // import com.facebook.react.ReactActivity;
+import com.horcrux.svg.SvgPackage;
 import com.reactnativenavigation.controllers.SplashActivity;
 
 public class MainActivity extends SplashActivity {

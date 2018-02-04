@@ -3638,6 +3638,10 @@ react-native-navigation@^1.1.365:
   dependencies:
     lodash "4.x.x"
 
+react-native-shadow@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-shadow/-/react-native-shadow-1.2.2.tgz#08991cd14b71e32f2fc6363911c139d231949a66"
+
 react-native-svg@^6.0.1-rc.3:
   version "6.0.1-rc.3"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-6.0.1-rc.3.tgz#9a54b6f70d350ee5f0169b3023ec6221254177fd"

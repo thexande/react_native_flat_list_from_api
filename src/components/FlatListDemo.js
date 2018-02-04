@@ -36,7 +36,7 @@ class FlatListDemo extends Component {
           refreshing: false
         })
 
-        this.setState(prev => {data: prev.data.push({sectionType: "horizontal"})})
+        this.setState(prev => {data: prev.data.unshift({sectionType: "horizontal"})})
 
 
       })
@@ -85,7 +85,7 @@ render() {
   renderItem = ({ item }) => {
     if (item.sectionType == "horizontal") {
       return  (
-        <HorizontalScroller style={{flex: 1, height: 200, backgroundColor: "green"}}/>
+        <HorizontalScroller items={this.state.data}/>
       )
     } else {
       return  (
