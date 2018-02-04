@@ -3636,9 +3636,11 @@ react-native-elevated-view@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-native-elevated-view/-/react-native-elevated-view-0.0.6.tgz#560cc9ab16cfd5cb5ea821521558fc711e57e231"
 
-"react-native-fbsdk@https://github.com/kidnapkin/react-native-fbsdk.git":
-  version "0.5.0"
-  resolved "https://github.com/kidnapkin/react-native-fbsdk.git#4db59c14fc8c42b885769ef64329365e60174bd4"
+react-native-fast-image@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-2.2.4.tgz#bc240feed8019337e8289ea6acd5fdf6aeab1b6d"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-navigation@^1.1.365:
   version "1.1.365"
