@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { FlatList, List, View, Text, StyleSheet } from "react-native"
-import {BoxShadow} from "react-native-shadow"
+import ElevatedView from 'react-native-elevated-view'
 
 export default class HorizontalScroller extends Component {
     constructor(props) {
@@ -12,9 +12,6 @@ export default class HorizontalScroller extends Component {
 
     render() {
         return (
-        //   <List automaticallyAdjustContentInsets={false} containerStyle = {{marginTop: 0}} >
-        //   </List>
-
        <View style={{flex: 1, height: 200}}> 
             <FlatList
                 ListHeaderComponent={this.renderHeader}
@@ -39,30 +36,25 @@ export default class HorizontalScroller extends Component {
     }
 }
 
-const shadowOpt = {
-	width:100,
-	height:100,
-	color:"#000",
-	border:2,
-	radius:3,
-	opacity:0.2,
-	x:0,
-	y:3,
-	style:{marginVertical:5}
-}
 
 const styles = StyleSheet.create({
     card: {
         borderRadius: 20,
-        backgroundColor: "black",
-        marginLeft: 12,
-        marginRight: 12, 
-        marginTop: 0,
-        marginBottom: 12,
+        backgroundColor: "white",
+        // width: 148,
+        // height: 188,
         flex: 1,
         shadowColor: "black",
         shadowRadius: 14,
         shadowOpacity: 0.6,
+    },
+    elevated: {
+        flex: 1,
+        marginLeft: 12,
+        marginRight: 12, 
+        marginTop: 6,
+        marginBottom: 12,
+        borderRadius: 20
     }
 })
 
@@ -73,10 +65,8 @@ class TitleCard extends Component {
 
     render() {
         return (
-            <View>
-                <BoxShadow setting={shadowOpt}>
-                    <View style={styles.card}></View>
-                </BoxShadow>
+            <View style={styles.card}>
+                <ElevatedView style={styles.elevated} elevation={6}/>
             </View>
         )
     }
