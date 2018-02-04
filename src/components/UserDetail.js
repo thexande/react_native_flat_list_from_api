@@ -16,7 +16,8 @@ export default class UserDetail extends Component {
         return [
             {
                 title: "Name",
-                detial: `${user.name.title} ${user.name.first} ${user.name.last}`,
+                detail: user.name.first
+                // detial: `${user.name.title} ${user.name.first} ${user.name.last}`,
             }, 
             {
                 title: "Gender",
@@ -52,13 +53,13 @@ class UserDetailInfoList extends Component {
 
     render() {
         return (
-          <List automaticallyAdjustContentInsets={false} containerStyle = {{marginTop: 0}} >
+          <List automaticallyAdjustContentInsets={false} containerStyle = {{flex: 1, marginTop: 0}} >
             <FlatList
-              ListHeaderComponent={this.renderHeader}
-              automaticallyAdjustContentInsets={false}
-              data={this.state.data}
-              keyExtractor = {(item, index) => index}
-              ItemSeperatorComponent = {this.renderSeparator}
+                ListHeaderComponent={this.renderHeader}
+                automaticallyAdjustContentInsets={false}
+                data={this.state.data}
+                keyExtractor = {(item, index) => index}
+                ItemSeperatorComponent = {this.renderSeparator}
       
               renderItem = { this.renderItem }
             />
@@ -68,15 +69,34 @@ class UserDetailInfoList extends Component {
 
     renderItem = ({item}) => {
         return(
-            <View>
-                <Text>{`${item.title} ${item.detail}`}</Text>
-            </View>
+            <UserDetailTableCell item={item} />
         )
     }
 
     renderHeader = () => {
         return (
             <UserDetailHeader item={this.props.user}/>
+        )
+    }
+}
+
+class UserDetailTableCell extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <View>
+                <View style={{flexDirection: "row", paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12}}>
+                    <View style={{flex: 1}}>
+                        <Text style={{textAlign: "left"}}>{`${this.props.item.title}`}</Text>
+                    </View>
+                    <View style={{flex: 1}}>
+                        <Text style={{textAlign: "right"}}>{`${this.props.item.detail}`}</Text>
+                    </View>
+                </View>
+            </View>
         )
     }
 }

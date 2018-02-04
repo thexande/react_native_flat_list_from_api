@@ -8,6 +8,6 @@ registerScreens()
 Navigation.startSingleScreenApp({
   screen: {
     screen: "api_test.userList",
-    title: 'Welcome'
+    title: 'Users'
   }
 })
